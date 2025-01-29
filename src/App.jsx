@@ -32,8 +32,9 @@ export default App
 //**** Completed 
 // 1) connet to the fakestore api and create a product component to display the items.
 // 2) create the navbar component
+// 3)finish the homepage, make it so only 9 items are showing in the homepage with a explore button below.
 
 //**** TODO
 
-//finish the homepage, make it so only 9 items are showing in the homepage with a explore button below.
-//
+//finish the homepage.
+
