@@ -7,7 +7,7 @@ const Product = ({ title, price, image }) => {
       <img
         src={image}
         alt={title}
-        className="w-32 h-32 object-contain mb-4"
+        className="w-60 h-60 object-contain mb-4"
       />
       <h3 className="text-sm font-bold text-center mb-2">{title}</h3>
       <h3 className="text-gray-700">£{price}</h3>
