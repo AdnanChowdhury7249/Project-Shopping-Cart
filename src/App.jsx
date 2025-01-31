@@ -1,14 +1,16 @@
-// import { useState } from 'react'
-
-// import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from './components/Homepage';
+import ShoppingPage from "./components/ShoppingPage";
 
 function App() {
 
   return (
-    <>
-      <Homepage />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/products" element={<ShoppingPage />} />
+      </Routes>
+    </Router>
   )
 }
 
@@ -33,8 +35,8 @@ export default App
 // 1) connet to the fakestore api and create a product component to display the items.
 // 2) create the navbar component
 // 3)finish the homepage, make it so only 9 items are showing in the homepage with a explore button below.
+// 4)Start the product page to show all the products, Add a add to basket button and a input amount for the number of items.  
 
 //**** TODO
 
-//finish the homepage.
 
