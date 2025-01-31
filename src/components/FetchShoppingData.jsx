@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Product from "./Product"
+import PropTypes from "prop-types";
 
-const FetchShoppingData = () => {
+const FetchShoppingData = ({ showAll = false }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -28,7 +29,7 @@ const FetchShoppingData = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
 
-          {(data.slice(0, 9)).map((product) => (
+          {(showAll ? data : data.slice(0, 9)).map((product) => (
             <Product
               key={product.id}
               title={product.title}
@@ -42,6 +43,10 @@ const FetchShoppingData = () => {
       )}
     </div>
   );
+};
+
+FetchShoppingData.propTypes = {
+  showAll: PropTypes.bool,
 };
 
 export default FetchShoppingData;
