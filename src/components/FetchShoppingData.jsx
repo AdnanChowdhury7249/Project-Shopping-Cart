@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "./Product"
 import PropTypes from "prop-types";
 
-const FetchShoppingData = ({ showAll = false }) => {
+const FetchShoppingData = ({ showAll = false, showBasketButton = false }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,9 +32,11 @@ const FetchShoppingData = ({ showAll = false }) => {
           {(showAll ? data : data.slice(0, 9)).map((product) => (
             <Product
               key={product.id}
+              id={product.id}
               title={product.title}
               image={product.image}
               price={product.price}
+              showBasketButton={showBasketButton}
 
             />
           ))}
@@ -47,6 +49,7 @@ const FetchShoppingData = ({ showAll = false }) => {
 
 FetchShoppingData.propTypes = {
   showAll: PropTypes.bool,
+  showBasketButton: PropTypes.bool,
 };
 
 export default FetchShoppingData;
