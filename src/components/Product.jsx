@@ -2,7 +2,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const Product = ({ id, title, price, image, showBasketButton }) => {
+const Product = ({ id, title, price, image, showBasketButton, quantity }) => {
   return (
     <div className="relative group border  p-4 rounded-md shadow-md hover:shadow-lg flex flex-col items-center w-full sm:w-60 md:w-56 lg:w-80 xl:w-80 ">
       <img src={image} alt={title} className="w-60 h-60 object-contain mb-4" />
@@ -18,6 +18,11 @@ const Product = ({ id, title, price, image, showBasketButton }) => {
         </Link>
       )
       }
+      {quantity !== undefined && (
+        <input type="number"></input>
+      )
+
+      }
     </div >
   );
 };
@@ -28,7 +33,11 @@ Product.propTypes = {
   price: PropTypes.number.isRequired,
   image: PropTypes.string.isRequired,
   showBasketButton: PropTypes.bool,
+  quantity: PropTypes.number,
 };
 
 
 export default Product;
+
+
+<input type="number" id="tentacles" name="tentacles" min="10" max="100" />

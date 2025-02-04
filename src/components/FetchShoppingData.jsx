@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Product from "./Product"
 import PropTypes from "prop-types";
 
-const FetchShoppingData = ({ showAll = false, showBasketButton = false }) => {
+const FetchShoppingData = ({ showAll = false, showBasketButton = false, quantity = false }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -37,6 +37,7 @@ const FetchShoppingData = ({ showAll = false, showBasketButton = false }) => {
               image={product.image}
               price={product.price}
               showBasketButton={showBasketButton}
+              quantity={quantity}
 
             />
           ))}
@@ -50,6 +51,7 @@ const FetchShoppingData = ({ showAll = false, showBasketButton = false }) => {
 FetchShoppingData.propTypes = {
   showAll: PropTypes.bool,
   showBasketButton: PropTypes.bool,
+  quantity: PropTypes.number,
 };
 
 export default FetchShoppingData;
