@@ -15,7 +15,7 @@ const Product = ({ id, title, price, image, showBasketButton }) => {
         <Link to={`/product/${id}`} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <button className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
         bg-blue-500 text-white px-4 py-2 rounded opacity-0 group-hover:opacity-100 transition cursor-pointer">
-            Add to Basket
+            Product Detail
           </button>
         </Link>
       )

@@ -1,6 +1,8 @@
 import FetchShoppingData from './FetchShoppingData';
 import NavBar from './NavBar'
 import boutiqueImage from "../assets/boutique.jpg";
+import { Link } from "react-router-dom";
+
 
 
 function Homepage() {
@@ -20,10 +22,8 @@ function Homepage() {
           Where Style Meets Elegance
         </h1>
 
-        <button className="bg-white px-6 py-3 rounded-3xl text-2xl cursor-pointer  
-                     hover:bg-black hover:text-white transition duration-300">
-          Shop Now
-        </button>
+        <Link to="/products" className="bg-white px-6 py-3 rounded-3xl text-2xl cursor-pointer  
+                     hover:bg-black hover:text-white transition duration-300">Shop Now</Link>
 
       </div>
 

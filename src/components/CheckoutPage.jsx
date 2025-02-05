@@ -1,6 +1,5 @@
-import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-
+import NavBar from "./NavBar";
 
 const CheckoutPage = () => {
 
@@ -21,51 +20,38 @@ const CheckoutPage = () => {
 
   const handleRemoveItem = (id) => {
     const updatedBasket = basket.filter((item) => item.id !== id);
-    setbasket(updatedBasket); // ✅ Update state
-    localStorage.setItem("basket", JSON.stringify(updatedBasket)); // ✅ Save new basket
+    setbasket(updatedBasket);
+    localStorage.setItem("basket", JSON.stringify(updatedBasket));
   };
 
+  const calculateTotalPrice = () => {
+    return basket.reduce((total, item) => total + item.price * item.quantity, 0)
+  }
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Shopping Cart</h1>
+
+    <div className="p-6 flex justify-center items-center h-screen">
+
+      <NavBar />
 
       {basket.length === 0 ? (
-        <p>Your basket is empty.</p>
+        <p className="mt-20">Your basket is empty</p>
       ) : (
         basket.map((item) => (
-          <div key={item.id} className="border p-4 rounded-md mb-4">
-            <h2 className="text-lg font-bold">{item.title}</h2>
-            <p>Price: £{item.price.toFixed(2)}</p>
-            <img src={item.image} />
+          <div key={item.id} className="p-4 rounded-md mb-4 max-w-150 mt-20 flex items-center gap-6">
+            <img className="w-100 h-100 object-contain" src={item.image} alt={item.title} />
 
-            <div className="flex items-center gap-2">
-              <button
-                className="bg-gray-300 px-2 py-1 rounded"
-                onClick={() => updateQuantity(item.id, item.quantity - 1)}
-              >
-                -
-              </button>
+            <div className="flex flex-col px-15">
+              <h2 className="text-lg font">{item.title}</h2>
 
-              <input
-                type="number"
-                value={item.quantity}
-                onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)}
-                className="w-16 text-center border"
-                min="1"
-              />
-              <button
-                onClick={() => handleRemoveItem(item.id)}
-                className="bg-red-500 text-white px-4 py-2 rounded-md"
-              >
-                Remove
-              </button>
+              <div className="flex items-center gap-2 mt-2">
+                <button className="bg-gray-300 px-2 py-1 rounded" onClick={() => updateQuantity(item.id, item.quantity - 1)}> - </button>
+                <input type="number" value={item.quantity} onChange={(e) => updateQuantity(item.id, parseInt(e.target.value) || 1)} className="w-16 text-center border" min="1" />
+                <button className="bg-gray-300 px-2 py-1 rounded" onClick={() => updateQuantity(item.id, item.quantity + 1)}> + </button>
+                <button onClick={() => handleRemoveItem(item.id)} className="bg-red-500 text-white px-4 py-2 rounded-md"> Remove </button>
+              </div>
 
-              <button
-                className="bg-gray-300 px-2 py-1 rounded"
-                onClick={() => updateQuantity(item.id, item.quantity + 1)}
-              >
-                +
-              </button>
+              <h2 className="text-xl  mt-4">Total Price: £{calculateTotalPrice().toFixed(2)}</h2>
             </div>
           </div>
         ))
