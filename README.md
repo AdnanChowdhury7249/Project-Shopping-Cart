@@ -7,6 +7,7 @@ This is a React Shopping Cart Application that allows users to browse products, 
 # Features
 
 ✅ Fetch Products - Uses fetch API to retrieve product data from FakeStore API.
+
 ✅ Product Details Page - Each product has its own details page, dynamically loaded via useParams.
 ✅ Add to Basket - Users can add items to their cart, and quantities update correctly.
 ✅ Update Cart Items - Adjust quantities or remove products from the basket.
