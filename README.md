@@ -1,12 +1,20 @@
 # Shopping Cart App 🛒
 
-Overview
+# Overview
 
 This is a React Shopping Cart Application that allows users to browse products, add them to a cart, update quantities, and proceed to checkout. It utilizes React Router for navigation, localStorage for persistent state management, and Tailwind CSS for styling.
 
-Features
+# Features
 
-✅ Fetch Products - Uses fetch API to retrieve product data from FakeStore API.✅ Product Details Page - Each product has its own details page, dynamically loaded via useParams.✅ Add to Basket - Users can add items to their cart, and quantities update correctly.✅ Update Cart Items - Adjust quantities or remove products from the basket.✅ Checkout Page - Displays all items in the basket, their total cost, and allows updates.✅ Persistent State - Cart data is stored in localStorage, so the basket remains after page refresh.✅ Styled with Tailwind CSS - Responsive, modern design.✅ React Router for Navigation - Seamless routing between Home, Products, and Checkout pages.✅ Tested with Vitest & React Testing Library - Unit tests ensure functionality.
+✅ Fetch Products - Uses fetch API to retrieve product data from FakeStore API.
+✅ Product Details Page - Each product has its own details page, dynamically loaded via useParams.
+✅ Add to Basket - Users can add items to their cart, and quantities update correctly.
+✅ Update Cart Items - Adjust quantities or remove products from the basket.
+✅ Checkout Page - Displays all items in the basket, their total cost, and allows updates.
+✅ Persistent State - Cart data is stored in localStorage, so the basket remains after page refresh.
+✅ Styled with Tailwind CSS - Responsive, modern design.
+✅ React Router for Navigation - Seamless routing between Home, Products, and Checkout pages.
+✅ Tested with Vitest & React Testing Library - Unit tests ensure functionality.
 
 # Technologies Used
 
